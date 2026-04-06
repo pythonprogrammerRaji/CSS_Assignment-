@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+
+    <link rel="stylesheet" href="signup.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+    <header class="d-flex align-items-center justify-content-around p-3">
+        <img src="https://static.naukimg.com/s/4/100/i/naukri_Logo.png" alt="logo">
+        <p class="fs-5">Already Registered? <a href="/">Login</a> here</p>
+    </header>
+
+    <section class="signup-container p-1 p-md-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-3">
+                    <div class="signup-left mb-3">
+                        <div class="card d-flex align-items-center p-2">
+                            <img src="https://static.naukimg.com/s/7/104/assets/images/white-boy.a0d2814a.png" alt="images">
+                            <h1 class="fs-5">On registering, you can</h1>
+                            <ul>
+                                <li>Build your profile and let recruiters find you</li>
+                                <li>Get job postings delivered right to your email</li>
+                                <li>Find a job and grow your career</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-9">
+                    <div class="signup-right">
+                        <div class="card p-3">
+                            <h1>Find a job & grow your career</h1>
+                            <div class="form-group">
+                                <label for="" class="form-label">Full Name</label>
+                                <input type="text" placeholder="What is your Name?" class="form-control" id="username">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="form-label">Email ID</label>
+                                <input type="text" placeholder="Tell us your Email ID" class="form-control" id="email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="form-label">Password</label>
+                                <input type="text" placeholder="What is your Name?" class="form-control" id="password">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="form-label">Mobile</label>
+                                <input type="number" placeholder="000-000-000" class="form-control" id="mobile">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-label">Work status</label>
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-6">
+                                        <div class="status-card d-flex gap-3 border p-3 mb-3">
+                                            <div class="">
+                                                <h1 class="fs-5 fw-bold">I'm experienced</h1>
+                                                <p class="fs-6 text-secondary">
+                                                    I have work experience (excluding internships)
+                                                </p>
+                                            </div>
+                                            <img src="https://static.naukimg.com/s/7/104/assets/images/briefcase.bdc5fadf.svg" alt="">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12 col-sm-12 col-md-6">
+                                        <div class="status-card d-flex gap-3 border p-3 mb-3">
+                                            <div class="">
+                                                <h1 class="fs-5 fw-bold">I'm a fresher</h1>
+                                                <p class="fs-6 text-secondary">
+                                                    I am a student/ Haven't worked after graduation
+                                                </p>
+                                            </div>
+                                            <img src="https://static.naukimg.com/s/7/104/assets/images/schoolbag.a54cbf7a.svg" alt="">
+                                        </div>
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="form-label">Current city</label>
+                                <input type="text" placeholder="Mention the city you live in" class="form-control" id="city">
+                                <small class="text-secondary small">Suggestions:</small>
+                                <div class="suggestion d-flex flex-wrap gap-3">
+                                    <button>Bengaluru</button>
+                                    <button>New Delhi</button>
+                                    <button>Mumbai</button>
+                                    <button>Pune</button>
+                                    <button>Chennai</button>
+                                    <button>Hyderabad</button>
+                                    <button>Gurugram</button>
+                                    <button>Noida</button>
+                                    <button>Ahmedabad</button>
+                                    <button>Kolkata</button>
+                                </div>
+                            </div>
+
+                            <small class="small text-secondary">By clicking Register, you are agree to the <a href=""> Terms and Condition</a> & <a href=""> Privacy Policy</a> of Naukri.com</small>
+                            <button class="btn bg-primary text-white register" onclick="register()" id="register">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+      
+       
+    </section>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+
+    <script>
+
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyASKu43KFQzFQL9MprlHaMbvTY_WomYeWQ",
+            authDomain: "players-a1da5.firebaseapp.com",
+            databaseURL: "https://players-a1da5-default-rtdb.firebaseio.com",
+            projectId: "players-a1da5",
+            storageBucket: "players-a1da5.appspot.com",
+            messagingSenderId: "358596500809",
+            appId: "1:358596500809:web:583dd6b55ff9afff2fce98",
+            measurementId: "G-0PEK4GZCGC"
+        };  
+
+        firebase.initializeApp(firebaseConfig);
+        const authentication = firebase.auth();
+        const database = firebase.database();
+
+        const btn = document.getElementById('register');
+
+        function register(){
+            btn.innerHTML = "loading..."
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var mobile = document.getElementById("mobile").value;
+            var city = document.getElementById("city").value;
+
+            authentication.createUserWithEmailPassword(email, password)
+            .then((success)=>{
+                btn.innerHTML = "Created"
+
+                var database_reference = database.ref();
+
+
+                const userdata = {
+                    userEmail : email,
+                    userName : username,
+                    city:city, 
+                    mobile:mobile,
+                    password:password
+                    
+                }
+
+                var user = authentication.currentUser;
+                database_reference.child('users/' + user.uid).set(userdata)
+                window.location.href = "signin.html"
+            })
+            .catch((error)=>{
+                btn.innerHTML = "Register"
+                alert(error)
+            })
+        }
+
+   
+         
+      </script>
+</body>
+</html>
