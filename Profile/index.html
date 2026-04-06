@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;  
+    }
+    .container{
+        padding: 20px;
+    }
+    .profile-top{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: linear-gradient(45deg, #7700d8, #b735f9);
+        border-radius: 20px;
+        min-height: 150px;
+    }
+    .profile{
+        width: 150px;
+        height: 150px;
+        position: relative;
+        margin-bottom: -120px;
+        
+    }
+    
+    .profile img{
+        width: 100%;
+        border-radius: 100px;
+        border-bottom: 5px solid #7700d8;
+    }
+    .camera{
+        widows: 50px;
+        height: 40px;
+        background-color: #AC87C5;
+        color: #fff;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        padding: 10px;
+    }
+    form{
+        padding: 20px;
+        text-align: center;
+        margin: 30px;
+        gap: 10px;
+
+        
+    }
+    
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile-top">
+            <div class="profile">
+                <img src="https://microbiology.ucr.edu/sites/default/files/styles/bubble/public/blank-profile-pic%20%281%29.png?h=2ba29c3e&itok=dtVQkW91" alt="">
+                <div class="camera">
+                    <i class="fa fa-camera"></i>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    <fieldset>
+        <form action="">
+            <label for="">FirstName</label> 
+            <input type="text" name="firstname" id="firstName" placeholder="Enter Your First Name">  <br/>
+
+            <label for="">LastName</label>
+            <input type="text" name="lastname" id="lastName" placeholder="Enter Your List Name"> <br/>
+
+            <label for="">FullName</label>
+            <input type="text" name="fullname" id="fullName" placeholder="Enter Your List Name"> <br/>
+            
+            <h3>Gender</h3>
+            <label for="">Male</label>
+            <input type="radio" name="male" id="male"> 
+            <label for="">Female</label>
+            <input type="radio" name="female" id="female"> 
+            <br/>
+
+            <h3 for="">Subject</h3>
+            
+            <input type="checkbox" name="english" id="english">
+            <label for="">English</label>
+            <input type="checkbox" name="kannada" id="kannada">
+            <label for="">Kannada</label>
+            <input type="checkbox" name="telugu" id="telugu">
+            <label for="">Telugu</label>
+            <input type="checkbox" name="hindi" id="hindi">
+            <label for="">Hindi</label>
+            <input type="checkbox" name="tamil" id="tamil">
+            <label for="">Tamil</label> <br/>
+
+            <h3>Select Your City</h3>
+            <select>
+                <option value="">Choose your City</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Pune">Pune</option>
+                <option value="Mysore">Mysore</option>
+            </select>
+            
+
+
+
+        </form>
+    </fieldset>
+    
+</body>
+</html>
