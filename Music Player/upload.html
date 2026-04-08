@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand fs-1 text-white"  href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="music.html">Music</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" aria-disabled="true">Albums</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" aria-disabled="true">Popular</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="upload.html" aria-disabled="true">Upload</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn bg-white p-2 fs-5 rounded-5" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="loading" id="loading">
+        <p>Please wait...</p>
+        <div class="progress">
+
+        </div>
+      </div>
+
+      <div class="upload">
+        <div class="row align-items-center">
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="upload-image">
+                    <img src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-135.jpg?w=740&t=st=1705033128~exp=1705033728~hmac=f1d16798bcdad13e6f370522a4bc13665b8c4acb4fe88664e4bbaa4f4cfcf529" alt="logo" class="w-100 mt-4">
+                </div>
+        
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="upload-form">
+                    <div class="form-group my-1">
+                        <label for="" class="form-label">UserName</label>
+                        <input type="text" placeholder="Enter your Name" required id="username" class="form-control p-3">
+
+                        <div class="form-group mt-2">
+                            <label for="" class="form-label mt-4">Album</label>
+                            <input type="text" placeholder="Enter Album Name" required id="album" class="form-control p-3" >
+                        </div>
+
+                        <div class="form-group mt-2">
+                          <label for="" class="form-label mt-4">Album</label>
+                          <input type="file" id="song" required class="form-control p-3" >
+                          <progress min="0" max="100" id="progress" value="0"></progress>
+                          <span id="result"></span>
+
+                      </div>
+                        
+
+                        <div class="form-group mt-2">
+                            <textarea name="desc" id="desc" cols="30" rows="3" placeholder="Something About Album..." class="form-control p-3"></textarea>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <button class="btn bg-primary text-white fs-4 w-100 p-3" id="uploadbtn">Upload Your Song</button>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+
+    <script>
+
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyASKu43KFQzFQL9MprlHaMbvTY_WomYeWQ",
+        authDomain: "players-a1da5.firebaseapp.com",
+        databaseURL: "https://players-a1da5-default-rtdb.firebaseio.com",
+        projectId: "players-a1da5",
+        storageBucket: "players-a1da5.appspot.com",
+        messagingSenderId: "358596500809",
+        appId: "1:358596500809:web:583dd6b55ff9afff2fce98",
+        measurementId: "G-0PEK4GZCGC"
+      };
+      
+     try{
+        const app = firebase.initializeApp(firebaseConfig);
+        const audio = document.getElementById('song');
+
+        const btn = document.getElementById('uploadbtn');
+        btn.addEventListener("click", ()=>{
+          const selectedAudio = audio.files[0]
+          if(selectedAudio!=undefined){
+            const storage = firebase.storage().ref();
+            const audioFolder = storage.child('audios/' + selectedAudio.name).put(selectedAudio)
+
+            audioFolder.on('state_changed',
+            (snapshot)=>{
+              // uploading time track the progress
+
+              const progress = document.getElementById("progress");
+              const presentProgress = parseInt((snapshot.bytesTransferred/snapshot.totalBytes)*100)
+              progress.value = presentProgress;
+              btn.innerText = `${presentProgress}% uploading...`
+            }, 
+            (error)=> {
+              //  uploading time track error
+              console.log(error)
+
+            },
+            ()=>{
+              // if upload is success handle the some message and get the online url of the file
+              audioFolder.snapshot.ref.getDownloadURL()
+              .then((url)=>{
+                alert('upload')
+                console.log(url)
+
+                
+
+                // const a = document.createElement('a');
+                // a.href = url;
+                // a.textContent = url;
+                // // document.body.append(a);
+
+                const database = firebase.database();
+                const Allaudio = database.ref('allAudios/');
+                const name = document.getElementById("username").value;
+                const albumName = document.getElementById("album").value;
+                const desc = document.getElementById("desc").value;
+
+                const data = {
+                  myAudioUrl:url,
+                  userName : name,
+                  album : albumName,
+                  description : desc
+
+                }
+
+                Allaudio.push(data)
+                .then(()=>{
+                  alert("Uploaded Data")
+                })
+                .catch((error)=>{
+                  console.log(error)
+                })
+              })
+              btn.innerHTML = "uploaded";
+            }
+            )
+        
+        }
+      }
+        )
+     }
+      catch(error){
+
+      }
+    </script>
+</body>
+</html>
