@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>camera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            margin: 20px;
+            border-radius: 50px;
+
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background-color: #484834;
+            padding: 30px;
+            overflow: hidden;
+            background: url(https://images.ctfassets.net/hrltx12pl8hq/3Z1N8LpxtXNQhBD5EnIg8X/975e2497dc598bb64fde390592ae1133/spring-images-min.jpg) no-repeat center;
+            background-size: cover;
+
+            
+        }
+        .container video{
+            width: 100%;
+            height: 90vh;
+            border-radius: 30px !important;
+            background-color: blur(100px);
+
+
+        }
+        .control{
+            position: absolute;
+            width: 100%;
+            bottom: 40px;
+            left: 0px;
+        }
+        .container video{
+            width: 100%;
+            height: 100vh;
+            border-radius: 30px;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 30px;
+
+
+        }
+        button:nth-child(1){
+            width: 50px;
+            height: 50px;
+            background-color: #2721219f;
+            outline: 2px solid white;
+            outline-offset: 5px;
+            border: none;
+            border-radius: 100px;
+            background: url(https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg) no-repeat center;
+            background-size: cover;
+
+            
+        }
+        button:nth-child(2){
+            width: 80px;
+            height: 80px;
+            border-radius: 100px;
+            outline: 3px solid white;
+            outline-offset: 10px;
+            border: none;
+            background-color: white;
+        }
+        button:nth-child(3){
+            width: 50px;
+            height: 50px;
+            background-color: rgb(red, green, blue);
+            outline: 2px solid white;
+            border: none;
+            outline-offset: 2px;
+            border-radius: 100px;
+            color: black;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="video">
+            <video id="camera" autoplay></video>  
+        </div>
+        <!-- autoplay => video paly autometically -->  
+        <div class="control">
+            <div class="main">
+            <button></button>
+            <button onclick="capturesImage()">Captures</button>
+            <button><i class="fa-solid fa-camera-rotate"></i></button>
+            </div>
+        </div> 
+    </div>
+
+    <script>
+        navigator.mediaDevices.getUserMedia({video:true})
+        .then(function (steam){
+            var video = document.getElementById("camera");
+            video.srcObject = steam;
+        })
+        .catch(function(err){
+            console.log('error accessing your camera');
+        })
+        function capturesImage(){
+            var video = document.getElementById("camera");
+            var canvas = document.createElement("canvas");
+            
+            //Setting canvas width and height same like vedio height and veido width
+            canvas.height = video.videoHeight;
+            canvas.width = video.videoWeight;
+
+            // adding 2d canvas to context variable
+            var context = canvas.getContext('2d');
+            
+            var name = prompt("Enter image name to download");
+
+            // drawing a 2d image in canvas
+            context.drawImage(video, 0, 0, canvas.height, canvas.width);
+
+            //createing canvas to images path or url or image address
+
+            var capturedImage = canvas.toDataURL('/image/png');
+
+            //create anchor tag for download the image
+
+            var downloadLink = document.createElement("a");
+            downloadLink.href = capturedImage;
+            downloadLink.download = `${name}.png`;
+
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.removeChild(downloadLink);
+        }
+    </script>
+</body>
+</html>
