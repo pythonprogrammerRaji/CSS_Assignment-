@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: teal;
+            
+            
+
+        }
+        .card{
+            background-color: aqua;
+            width: 30%;
+            height: 20vh;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 100px;
+
+            
+        }
+        input{
+            width: 100%;
+            margin-bottom: 15px;
+            border: 2px solid gray;
+            padding: 10px;
+            font-size: 1rem;
+            color: rgb(247, 5, 202);
+            border-radius: 10px;
+            
+            
+        }
+        button{
+            padding: 10px;
+            width: 100px;
+            background-color: deeppink;
+            color: white;
+            font-size: 1rem;
+            color: white;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            border: 1px solid gray;
+            margin-left: 130px;
+            cursor: pointer;
+            
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <input type="text" id="myspeech" placeholder="Enter any text">
+            <button onclick="speck()">Speck</button>
+        </div>
+    </div>
+<script>
+    function speck(){
+        var textToSpeck = document.getElementById("myspeech").value;
+        var speechSensor1 = window.speechSynthesis;
+        var utterance = new SpeechSynthesisUtterance(textToSpeck);
+        speechSensor1.speak(utterance);
+    }
+</script>
+
+</body>
+</html>
