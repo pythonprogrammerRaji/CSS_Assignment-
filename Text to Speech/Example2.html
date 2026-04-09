@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speech to text</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .card{
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+        }
+        .search{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(186, 185, 185, 0.806);
+            border-radius: 100px;
+           
+
+
+        }
+        .search input{
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+        .icon{
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 0px 100px 100px 0px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+        button{
+            padding: 15px;
+            font-size: 1.1rem;
+            border-radius: 100px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(142, 142, 142);
+            border: none;
+            border-radius: 1px solid #ffffffdf;
+        }
+        .mic-container{
+            width: 100%;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .mic{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            border-radius: 100px;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        .mic::before{
+            content:"";
+            width: 100%;
+            height: 100%;
+            background-color: aqua;
+            border-radius: 100px;
+            position: absolute;
+            z-index: -1;
+            transform: scale(1.5);
+            animation: anim 1s linear infinite alternate;
+        }
+        .mic::after{
+            content:"";
+            width: 100%;
+            height: 100%;
+            background-color: rgb(127, 102, 192);
+            border-radius: 100px;
+            position: absolute;
+            z-index: -2;
+            transform: scale(1.5);
+            animation: anim 1s linear infinite alternate;
+            animation-delay: 0.3s;
+        }
+        @keyframes anim{
+            0%{
+                transform: scale(0.5);
+            }
+            100%{
+                transform: scale(1.4);
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="search">
+                <input type="text" placeholder="Search for anything">
+                <div class="icon">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+            <button onclick="startListening()"><i class="fa fa-microphone"></i>
+            </button>
+            <p id="transcription"></p>
+            <p id="isListening"></p>
+       </div>
+       <div class="mic-container">
+        <div class="mic">
+            <i class="fa fa-microphone"></i>
+        </div>
+       </div>
+    </div>
+
+    <script>
+        function startListening(){
+            var recognition = new webkitSpeechRecognition || speechRecognition;      // To give system Mic
+            recognition.lang = "en-US";       //Mic language
+            recognition.start();              // To start mic
+
+            recognition.onresult = function(e){            // e => target the particular value 
+                var transcription = e.result[0][0].transcript;
+                document.getElementById("transcription").textContent = transcription;
+
+            }
+
+            recognition.onend = function(){
+                recognition.stop();
+            }
+        }
+    </script>
+</body>
+</html>
