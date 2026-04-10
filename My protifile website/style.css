@@ -1,0 +1,25 @@
+.nav-link{
+    color: #fff !important;
+}
+.full-section{
+    padding: 20px 30px;
+}
+.nav-link:hover{
+    color: #0e12dbda !important;
+    transition: all 0.5s;
+}
+.icons i{
+    color: #fff;
+    background-color: #0e12dbda;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    
+
+}
+.icons a{
+    text-decoration: none;
+}
