@@ -1,0 +1,266 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.nav-link{
+    color: white !important;
+    font-size: 1.5rem;
+
+}
+.nav-link:hover{
+    color:  #3315aa !important;
+    transition: all 1s ;
+}
+.icons i{
+    width: 50px;
+    height: 50px;
+    background-color: #3315aa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 100px
+
+}
+.icons a{
+    text-decoration: none;
+}
+.navbar{
+    position: sticky !important;
+    top: 0 !important;
+}
+
+/* hero section */
+.hero{
+    background: url(https://img.freepik.com/free-vector/paper-style-dynamic-lines-background_23-2149008629.jpg);
+    background-size: cover;
+    height: 80vh;
+    color: #fff;
+    overflow: hidden;
+}
+.heading{
+    font-weight: 900;
+    letter-spacing: 1.3rem;
+}
+.text-main{
+    color: #3315aa;
+}
+.hire-btn{
+    border: none;
+    padding: 10px;
+    min-width: 150px;
+    font-style: 1.2rem;
+    border-radius: 5px;
+    background-color: #3315aa;
+    color: #fff;
+
+}
+.cv-btn{
+    border: none;
+    padding: 10px;
+    min-width: 150px;
+    font-style: 1.2rem;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #5b41c36c;
+    border: 1px solid #3315aa6c;
+
+}
+.hero-image img{
+    width: 80%;
+    transform: translateY(-100px) translateX(100px);
+    margin-top: 20px
+}
+.hero-text{
+    margin-top: 100px;
+}
+
+/* about Section */
+.about-img img{
+    width: 80%;
+    border-radius: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* hobbies section */
+.habbies-card{
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+    border-radius: 10px;
+
+}
+
+.habbies-card:hover{
+    background-color: #cccccc7a;
+}
+.habbies-card .icons{
+
+}
+.habbies-card .icons:hover{
+    background-color: orchid;
+
+}
+.offer-card{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+/* banner section */
+.banner{
+    background: linear-gradient(315deg, #000000ad, #000000a3),url(https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)no-repeat center;
+    background-size: cover;
+    min-height: 300px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* experience */
+    
+.experience{
+    overflow: hidden;
+}
+
+   
+    
+.experience-left ul{
+    position: relative;
+    z-index: -1;
+    
+
+
+}
+.experience-left ul::before{
+    content: "";
+    position: absolute;
+    right: -30px;
+    top: 0;
+    background-color: transparent;
+    width: 3px;
+    height: 100%;
+    border-right: 3px dashed #a59d9dd2;
+    z-index: -1;
+}
+.experience-left ul li{
+    position: relative;
+    padding-left:-20px;
+   
+}
+.experience-left ul li::before{
+    content: "";
+    position: absolute;
+    right: -43px;
+    top: 20px;
+    background-color: rgba(0, 0, 255, 0.68);
+    width: 30px;
+    height: 30px;
+    outline: 3px dashed #ccc;
+    border-radius: 100%;
+    outline-offset: 5px;
+    z-index: -1;
+
+}
+.experience-right ul{
+    z-index: -1;
+}
+
+
+
+/* projects section */
+
+.project-card{
+    width: 250px;
+    height: 250px;
+    position: relative;
+    margin: 20px;
+    background: linear-gradient(45deg, #3315aa, #179117da);
+
+   
+}
+.project-card img{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    
+}
+.project-card>.project-info{
+    position: absolute;
+    top: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    transform: translate(20%);
+    display: none;
+   
+    
+
+  
+   
+}
+
+.project-card:hover>.project-info{
+   display: block;
+   transform: translate(20%);
+   color: #fff;
+   
+   
+    
+    
+}
+.project-card:hover>.project-info{
+   color: #3315aa;  
+   transition:all 0.1s;
+ }
+
+/* project */
+.project-card{
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 10px #b6b5b5;
+}
+.project-info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#0000004f, #000);
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    padding: 10px;
+    color: #fff;
+    transform: scale(0);
+}
+.project-card:hover .project-info{
+    transform: scale(1);
+    transition: 0.8s;
+}
+/* blogs section  */
+.blogs-btn{
+    border: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: transparent;
+}
+.blog-card{
+    margin-bottom: 20px;
+}
+
+/* contact section */
+.contact input{
+    padding: 15px;
+}
+.contact{
+    background-color: #ebefff;
+}
+.contact button{
+    width: fit-content;
+}
