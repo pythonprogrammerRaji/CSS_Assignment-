@@ -1,0 +1,75 @@
+.nav{
+    background-color: green;
+    border-radius: 10px;
+}
+.nav>ul{
+    list-style: none;
+    padding: 0%;
+    margin: 0%;
+    float: right;
+}
+.nav>ul>li{
+    display: inline-block;
+    padding: 20px;
+}
+.nav>ul>li:hover{
+    background-color: white;
+}
+.nav>ul>li>a{
+    color: rgb(139, 26, 137);
+    text-decoration: none;
+}
+.nav>ul>li>:hover a{
+    color: gray;
+}
+.nav>img{
+    height: 50px;
+
+}
+.body>ul>li{
+
+    background-color: #11998e;
+    background-color: -webkit-linear-gradient(to right,#38ef7d, #11998e);
+    background-color: linear-gradient(to right,#38fe7d,#11998e);
+    list-style-image: url(../image/book.png);
+}
+
+.card{
+    position: relative;
+    height: 460px;
+    width: 360px;
+    background-color: #38ef7d;
+    margin: 100px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0.19);
+}
+.header{
+    position: absolute;
+    height: 20..px;
+    width: 95%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0,0.19);
+    background-image: linear-gradient(right, #1dd1a1, #1abc9c);
+}
+.header img{
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    left: 90px;
+    top: 22px;
+}
+.header h3{
+    position: relative;
+    font-family: sans-serif;
+    color: white;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    top: 118px;
+    left: 80;
+}
