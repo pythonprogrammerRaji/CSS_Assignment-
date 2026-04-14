@@ -1,0 +1,157 @@
+@media(max-width:768px) {
+    body {
+        line-height: 1;
+    }
+
+    .home-info {
+        width: 100%;
+        padding: 10px;
+        min-height: fit-content;
+        max-height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-info>h1 {
+        font-size: 2em;
+    }
+
+    .home-info>p,
+    .home-button-container>button {
+        font-size: 1.2em;
+    }
+
+    .home-button-container {
+        text-align: center;
+    }
+
+    .collections {
+        flex-flow: row wrap;
+        padding: 40px;
+    }
+
+    .collections>div {
+        min-width: 100%;
+    }
+
+    .categorie div {
+        width: 100%;
+    }
+
+    .collections table td {
+        font-size: 1em;
+    }
+
+    .create {
+        padding: 5px;
+    }
+
+    .createNTF,
+    .item-card-container,
+    .item-card-container .card {
+        margin-left: 40px;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .createNTF {
+        display: none;
+    }
+
+    .create-description>div {
+        width: 100%;
+        flex-flow: row wrap;
+    }
+
+    .categorie>div {
+        padding: 15px;
+    }
+
+    .market-items {
+        display: none;
+    }
+
+    .create-description {
+        flex-direction: column;
+    }
+
+    .card-text-container {
+        width: 100%;
+    }
+
+    .item-card-container .card {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .item-card-container {
+        flex-direction: column;
+        margin: 0;
+        justify-content: left;
+    }
+
+    .profile>.card-profile>img {
+        width: 100%;
+        height: 300px;
+    }
+
+    table td,
+    table th {
+        text-align: left;
+    }
+
+    .card-text-container {
+        margin-left: 0px;
+        text-align: left;
+        float: left;
+    }
+
+    .item-cards {
+        padding: 10px;
+    }
+
+    .create-description section {
+        display: block;
+        position: relative;
+        top: 0px;
+        left: -150px;
+        color: white;
+    }
+
+    .card-profile {
+        min-width: 100%;
+    }
+
+    .code>section::after {
+        content: "";
+        position: absolute;
+        width: 230px;
+        left: 10px;
+        top: 10px;
+        height: 2px;
+        background-color:white;
+        opacity: 0.1;
+    }
+
+    .design{
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-size: 1.2em;
+        line-height: 1;
+    }
+
+    td {
+        font-size: 1.2rem;
+    }
+
+    button {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind&family=Manrope&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    transition: all 0.5s ease-in;
+    letter-spacing: 1.3px;
+}
+body{
+    background-color: #000;
+}
+p{
+    font-size: 1em;
+}
+header, nav>ul{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 50px;
+    padding: 5px;
+}
+.main{
+    padding: 2% 10%;
+    height: 100vh;
+    background:  url(../image/image/city2) no-repeat;
+    color: white;
+    background-size: cover;
+    line-height: 1.5;
+}
+header>.logo>img{
+    height: 3em;
+    margin-left: 15px;
+}
+nav>ul>li,
+header>nav>ul {
+    margin-left: 15px;
+    padding: 0px;
+    margin-top: 9px;
+}
+nav>ul>li>a {
+    text-decoration: none;
+    font-size: 1em;
+    padding: 7px;
+    color: black;
+    letter-spacing: 2px;
+}
+nav>ul>li:hover a{
+    background-color: blueviolet;
+    color: white;
+    border-radius: 50px;
+}
+.content{
+    
+    margin-top: 10%;
+    gap: 20px;
+}
+.content>div>p{
+    font-size: 15px;
+    line-height: 2;
+    font-weight: normal;
+}
+.content>img{
+    width: 30%;
+    float: right;
+    margin-top: -300px;
+}
+.content-button>button{
+  color: white;
+  height: 35px;
+  border-radius: 20px;
+  margin: 20px;
+  font-size: bold;
+  width: 20%;
+  background-color:blueviolet;
+  border: none;
+  padding: 10px;
+}
+.content-button>button::before {
+    content:"";
+    width:14%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom:22.5%;
+    left:12%;
+   
+ 
+ }
+.content-button>button:hover{
+    background-color: transparent;
+    color: white;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10%;
+    gap: 20px;
+    flex-flow: row wrap;
+}
+.icons>div{
+    flex: 1;
+    width: 110%;
+    text-align: center;
+    background-color: #343131;
+    border-radius: 20px;
+    padding: 20px;
+    padding-top: 20px;
+    color: white;
+    border: 1px solid #777077;
+
+}
+.icons>div>img{
+    background-color: white;
+    padding: 20px;
+    border-radius: 40px;
+    line-height: 5;
+    margin-bottom: 6px;
+}
+.icons-text{
+    text-align: center;
+    color: #fff;
+    padding: 3%;
+    padding-top: 10%;
+}
+.icons-text>h2{
+    position: relative;
+    letter-spacing: 1px;
+}
+.icons-text>h2>span{
+    color: blueviolet;
+}
+.icons-text>h2::before{
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 2px;
+    background-color: blueviolet;
+    top: -20px;
+    left: 46%;
+} 
+.icons, .card1, .create, .profile{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 10%;
+  background-color: black;
+  flex-flow: row wrap;
+
+}
+.icons>div, .card1>div, .create>div, .profile>.card-profile{
+    flex: 1;
+    text-align: center;
+    height: 150px;
+    background-color: #343131;
+    border-radius: 20px;
+    border: 1px solid #777077;
+    color: white;
+    padding-top: 20px;
+    line-height: 2;
+}
+
+.card1>div{
+    height: fit-content;
+    max-width: 300px;
+    line-height: 2;
+    text-align: left;
+    padding-bottom: 20px;
+    position: relative;
+    margin-top: 20px;
+   
+    
+}
+.card1>div>img{
+    width: 100%;
+    margin-top: -20px;
+    border-radius: 20px 20px 0px 0px;
+}
+.card1>div>div>h2{
+    font-size: 20px;
+    padding: 2px 2%;
+
+}
+.card1>div>div>hr, .profile>div>div>hr{
+    margin: 20px;
+    opacity: 0.2;
+}
+.card1>div>div>table{
+    width: 100%;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1em;
+    padding: 5px 5%;
+}
+.card1>div>button{
+    position: absolute;
+    width: 80%;
+    border: none;
+    font-size: 1em;
+    color: white;
+    padding: 15px;
+    background-color: blueviolet;
+    border-radius: 50px;
+    left: 10%;
+    bottom: -23px;
+    overflow: hidden;
+}
+.card1>div>button::after{ 
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 3px;
+    bottom: 0;
+    left: 23px;
+    background-color: white;
+
+}
+.item{
+    background-color: blueviolet;
+    padding: 8px 8%;
+    height: 80vh;
+    margin-top: 150px;
+    
+}
+.create>div>img{
+    background-color: white;
+    color: blueviolet;
+    padding: 20px;
+    border-radius: 50px;
+}
+.create>div>h4{
+    font-size: 18px;
+
+}
+.code>button{
+    position: relative;
+    width: 25%;
+    border: none;
+    font-size: 1em;
+    color: white;
+    padding: 15px;
+    background-color: blue;
+    border-radius: 50px;
+    left: 10%;
+    bottom: -23px;
+    float: right;
+    margin: 10px 10%;
+}
+.code>button::before{
+    content: "";
+    position: relative;
+    height: 230px;
+    left: 2px;
+    top: 20px;
+    width: 2px;
+    background-color:white;
+    opacity: 0.1;
+   
+}
+.create>section{
+    display: block;
+    position: relative;
+    top: -100px;
+    left: 5px;
+    color: white;
+}
+.create>section::after{
+    content: "";
+    position: absolute;
+    height: 230px;
+    left: 2px;
+    top: 20px;
+    width: 2px;
+    background-color: white;
+    opacity: 0.1;
+}
+.create>div{
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    height: fit-content;
+    width: min-content;
+    
+}
+
+.code{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-radius: 0;
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    padding: 10px 10%;
+}
+.create>div>p{
+    letter-spacing: 2px;
+}
+
+.create{
+    background-color: transparent;
+}
+.shell{
+    padding: 10px 10%;
+
+}
+.shell1>h1::before{
+    content: "";
+    position: absolute;
+    width: 7%;
+    height: 2px;
+    background-color: blueviolet;
+    top: 10px;
+    left: 2%;
+
+}
+.shell1>h1{
+   color: #fff;
+   font-size: 25px;
+   margin: 20px;
+   left: -20px;
+   top: 60px;
+}
+.shell1{
+    background-color: black;
+    position: relative;
+    margin-top: 40px;
+}
+.shell1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0%;
+}
+.navBar>ul>li>a{
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    background-color: black;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+.navBar>ul>li{
+    display: inline-block;
+    padding: 8px;
+    border-radius: 50px;
+}
+.navBar>ul>li:hover a{
+    background-color: blueviolet;
+}
+
+
+.shell1>h1>span, .card-text-profile>div>div>h4, .card-text-profile>p{
+    color: blueviolet;
+}
+.profile{
+    color: var(--white);
+    text-align: center;
+    margin-top: 0;
+    padding: 30px;
+    justify-content: space-around;
+}
+.profile>.card-profile{
+    display: flex;
+    text-align: left;
+    position: relative;
+    height: fit-content;
+    align-items: center;
+    flex: 1;
+    letter-spacing: 0.5px;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+table{
+    font-size: 15px;
+}
+.profile>.card-profile>img{
+    height: 250px;
+    border-radius: 20px 20px;
+}
+.profile>.card-profile>.card-text-profile>table{
+    width: 100%;
+    text-align: right;
+    margin-bottom: 20px;
+}
+.card-text-profile{
+    margin-left: 10px;
+}
+.card-text-profile>table>th{
+    font-size: 20px;
+    text-align: left;
+}
+.card-text-profile>div{
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+    gap: 10px;
+    margin-top: 15px;
+}
+.card-text-profile>p{
+    text-decoration: underline;
+}
+.card-text-profile>div>img{
+    border-radius: 30px;
+}
+.design{
+    background-color: blueviolet;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    font-size: 20px;
+    
+}
+.design>p>span{
+    color: #000;
+}
+
+
+
+
+
