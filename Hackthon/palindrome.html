@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    <h3>2. Write a program to Check the given string is Palindrome or Not </h3>
+    <p>a. Malayalam</p>
+    <p>b. english</p>
+    <script>
+       function myFunction(string) {
+            let j = string.length - 1
+            for (let i = 0; i < string.length / 2; i++) {
+                if (string[i] != string[j]) {
+                    return false;
+                }
+                j--;
+            }
+            return true;
+        }
+        
+        let a = "malayalam";
+        let b = "english";
+
+        
+        
+        console.log(myFunction(a));
+        console.log(myFunction(b));
+      
+
+    </script>
+</body>
+</html>
