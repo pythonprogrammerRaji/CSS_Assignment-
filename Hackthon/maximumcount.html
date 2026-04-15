@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count</title>
+</head>
+<body>
+    <h3>3. Write a program to get the maximum count of consecutive 1's in a given array</h3>
+    <p>input = [0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1]</p>
+    <script>
+        
+    function myFunction(num) {
+    let maxCount = 0;
+    let currentCount = 0;
+
+    for (let i = 0; i < num.length; i++) {
+        if (num[i] === 1) {
+            currentCount++;
+            maxCount = Math.max(maxCount, currentCount);
+        } else {
+            currentCount = 0;
+        }
+    }
+
+    return maxCount;
+}
+
+    const input = [0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1];
+    const result = counts(input);
+
+    console.log(`Maximum consecutive 1's count: ${result}`);
+
+</script>
+            
+      
+</body>
+</html>
