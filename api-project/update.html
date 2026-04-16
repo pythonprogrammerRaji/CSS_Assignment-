@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+        <nav class="bg-info p-2 text-end">
+            <ul class="m-1 align-content-lg-center">
+                <li><a href="index.html" class="p-2 text-decoration-none fs-2 border-5">Home</a></li>
+                <li><a href="create.html" class="p-2 text-decoration-none fs-2 border-5">Create</a></li>
+                <li><a href="update.html" class="p-2 text-decoration-none fs-2 border-5">Update</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+        <div class="card">
+            <form action="update" id="fullForm">
+                <label for="item">Item Name</label>
+                <input type="text" name="name" id="item" placeholder="Enter Your Name" no-readonly>
+                <label for="price">price</label>
+                <input type="number" name="price" id="price" placeholder="Enter price">
+                <label for="Description">Description</label>
+                <input type="text" name="name" id="dec" placeholder="Description">
+                <label for="image">Image Url</label>
+                <input type="text" name="image" id="imageUrl" placeholder="Enter image url">
+                <button class="bg-tertiary">Update</button>
+                <button class=" btn btn-success">Reset</button>
+               
+            </form>
+        </div>
+     </section>
+
+     <script src="assets/js/update.js"></script>
+</body>
+</html>
